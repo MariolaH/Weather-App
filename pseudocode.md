@@ -12,8 +12,114 @@ display:
     other info
         ie. image
 
+
+
 Everything will be in JS except
-    
+
+
+
+Functions:
+
+    input button - for zip code
+    when new zip code is put in and button is clicked renders new weather info for new zip code
+    refresh button - resets weather info in app????
+    or just use same button
+
+    when zip doesn't exist... error message or alert pop up
+
+
+1
+    // Create a button element
+    const button = document.createElement('button')
+
+    // Set the button text to 'Can you click me?'
+    button.innerText = 'Can you click me?'
+
+2
+
+    // Attach the "click" event to your button
+    button.addEventListener('click', () => {
+    // When there is a "click"
+    // it shows an alert in the browser
+    alert('Oh, you clicked me!')
+    })
+
+3
+    // Add the button to your HTML <body> tag
+    document.body.appendChild(button)
+
+
+
+buildHTML() elements
+     city
+    temperature
+        Kelvin, Fahrenheit, and Celsius
+    condition
+    other info
+        ie. image
+    * use appendChild to add these objects to the html
+
+
+    ex.
+        <ul id="menu"></ul>
+
+
+        function createMenuItem(name) {
+        let li = document.createElement('li');
+        li.textContent = name;
+        return li;
+    }
+
+    // get the ul#menu
+    const menu = document.querySelector('#menu');
+    // add menu item
+    menu.appendChild(createMenuItem('Home'));
+    menu.appendChild(createMenuItem('Services'));
+    menu.appendChild(createMenuItem('About Us'));
+
+
+
+    function getData
+            gets data from api
+
+        function getData() {
+        axios.get(url)
+            .then(function (response) {
+                console.log(response);
+                console.log("catInfo", response.data)
+                catInfo = response.data;
+                console.log(catInfo);
+                createListItems(catInfo);
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
+
+    }       
+
+
+
+function that pulls out specific items froms the api.....
+
+city
+    temperature
+        Kelvin, Fahrenheit, and Celsius
+    condition
+    other info
+        ie. image
+
+
+                function weatherData(arr) {
+    for (cat of arr) {
+        let listItem = document.createElement("li");
+        listItem.innerHTML = `${cat.text}: ${cat.source}`;
+`${city}: ${temperature}, ${condition}, ${other info}`;
+
+        document.getElementById("myList").appendChild(listItem);
+    }
+}
+        
+
 
 
         init()
