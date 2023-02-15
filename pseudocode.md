@@ -20,33 +20,12 @@ Everything will be in JS except
 
 Functions:
 
-    input button - for zip code
+    input button - for zip code - create onClick button
     when new zip code is put in and button is clicked renders new weather info for new zip code
     refresh button - resets weather info in app????
     or just use same button
 
     when zip doesn't exist... error message or alert pop up
-
-
-1
-    // Create a button element
-    const button = document.createElement('button')
-
-    // Set the button text to 'Can you click me?'
-    button.innerText = 'Can you click me?'
-
-2
-
-    // Attach the "click" event to your button
-    button.addEventListener('click', () => {
-    // When there is a "click"
-    // it shows an alert in the browser
-    alert('Oh, you clicked me!')
-    })
-
-3
-    // Add the button to your HTML <body> tag
-    document.body.appendChild(button)
 
 
 
