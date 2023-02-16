@@ -27,10 +27,20 @@ onset = (event) => {};
 
 // getting the zipCode
 
-let zipCode = 40511; 
+let zipCode = '';
+function getZip(){
+zipCode = input.value;    
+console.log(zipCode); 
+}
 
-let mainData = [];
+input.onblur = getZip;
 
+let mainData = {
+    condition: "",
+    city: "",
+    temp: "",
+    otherInfo: "",
+};
 // 2. create object that connect to html
 //     city
 //     temperature
@@ -44,57 +54,72 @@ function display() {
 // City section   
 
 let city = document.createElement('div')
-// city.classList.add(container, center) 
 city.textContent = 'City'
 main.appendChild(city)
 
 // gets data from API
 
-// let cityValue = document.createElement('div')
-// cityValue.textContent = mainData.name;
-// main.appendChild(cityValue)
+let cityValue = document.createElement('div')
+cityValue.textContent = mainData.city;
+main.appendChild(cityValue)
 
 // Temp section & convet k to c, K to F
 // This renders kelvin
+
+
+
 
 let temperature = document.createElement('div')
 temperature.textContent = 'Temperature'
 main.appendChild(temperature)
 
+(class = )
+
 // gets data from API
 
 let tempValue = document.createElement('div')
-tempValue.textContent = mainData.main.temp
+tempValue.textContent = mainData.temp
 main.appendChild(tempValue)
 
 // convet k to c
 
-// function kelvinToCelsius(celsius) {
-//     return kelvin - 273.15;
-}
+function kelvinToCelsius(celsius) {
+    return kelvin - 273.15;
+
 
 // convet k to F
 
-// function kelvinToFahrenheit(fahrenheit)
-//     return kelvin * (9/5) - 459.67;
+function kelvinToFahrenheit(fahrenheit)
+    return kelvin * (9/5) - 459.67;
+
 
 // conditions section
 
+
 let condition = document.createElement('div')
-condition.textContent = 'Condition'
+condition.textContent = "Condition"
 main.appendChild(condition)
 
 // gets data from API
 
-// let conditionValue = document.createElement('div')
-// conditionValue.textContent = mainData.main.clouds
-// main.appendChild(conditionValue)
+let conditionWeather = document.createElement('div')
+conditionWeather.textContent = mainData.condition
+main.appendChild(conditionWeather);
 
-// other info ie.  image
+
+
+// Other info section
 
 let otherInfo = document.createElement('div')
 otherInfo.textContent = 'Other Info'
-main.appendChild(otherInfo)
+main.appendChild(otherInfo);
+
+// gets data from data object
+
+let icon = document.createElement('div')
+icon.textContent = mainData.otherInfo
+main.appendChild(icon);
+}
 
 // 3. connect API
 
@@ -104,12 +129,12 @@ function getData() {
     axios.get(`https://api.openweathermap.org/data/2.5/weather?zip=${zipCode},us&appid=6a59100ef22a193081d29e1193fbc24d`)
         .then(function (response) {
             // handle sucess
-            console.log(response);
-            console.log("main", response.data)
-            mainData = response.data;
-            console.log(mainData);
+            let data = response.data;
+            mainData.condition = data.weather[0].main;
+            mainData.city = data.name;
+            mainData.temp = data.main.temp;
+            mainData.otherInfo = data.weather[0].icon;            
             display();
-            // createListItems(main);
         })
         .catch(function (error) {
             console.log(error);
