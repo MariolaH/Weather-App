@@ -30,22 +30,39 @@ let mainData = [];
 //     Other Info
 //         ie. image
 
+function display() {
+
+   
 
 let city = document.createElement('div')
+// city.classList.add(container, center) 
 city.textContent = 'City'
 main.appendChild(city)
+
+let cityValue = document.createElement('div')
+cityValue.textContent = mainData.name;
+main.appendChild(cityValue)
 
 let temperature = document.createElement('div')
 temperature.textContent = 'Temperature'
 main.appendChild(temperature)
 
+let tempValue = document.createElement('div')
+tempValue.textContent = mainData.main.temp
+main.appendChild(tempValue)
+
 let condition = document.createElement('div')
 condition.textContent = 'Condition'
 main.appendChild(condition)
 
+let conditionValue = document.createElement('div')
+conditionValue.textContent = mainData.main.clouds
+main.appendChild(conditionValue)
+
 let otherInfo = document.createElement('div')
 otherInfo.textContent = 'Other Info'
 main.appendChild(otherInfo)
+}
 
 // 3. connect API
 
@@ -64,6 +81,7 @@ function getData() {
             console.log("main", response.data)
             mainData = response.data;
             console.log(mainData);
+            display();
             // createListItems(main);
         })
         .catch(function (error) {
