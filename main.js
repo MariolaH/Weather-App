@@ -1,7 +1,7 @@
+
 let main = document.getElementById('main');
 
 // 1. create onclick and input 
-
 
 let button = document.createElement('button')
 button.textContent = 'Get Weather'
@@ -18,7 +18,9 @@ main.appendChild(input)
 
 // getting the zipCode
 
-let zipCode; 
+let zipCode = 40511; 
+
+let mainData = [];
 
 // 2. create object that connect to html
 //     city
@@ -54,20 +56,23 @@ main.appendChild(otherInfo)
 // gets data from api
 
 function getData() {
-    zipCode = document.getElementById('input');
+    // zipCode = document.getElementById('input').value;
+    console.log(zipCode);
     axios.get(`https://api.openweathermap.org/data/2.5/weather?zip=${zipCode},us&appid=6a59100ef22a193081d29e1193fbc24d`)
         .then(function (response) {
             console.log(response);
             console.log("main", response.data)
-            main = response.data;
-            console.log(main);
-            createListItems(main);
+            mainData = response.data;
+            console.log(mainData);
+            // createListItems(main);
         })
         .catch(function (error) {
             console.log(error);
         })
 
 }
+
+
 
 // 4. create functions that converts Kelvin, Fahrenheit, and Celsius
 
