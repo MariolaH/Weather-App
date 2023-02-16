@@ -67,30 +67,40 @@ main.appendChild(cityValue)
 // This renders kelvin
 
 
-
-
 let temperature = document.createElement('div')
 temperature.textContent = 'Temperature'
 main.appendChild(temperature)
 
-(class = )
+let tempContainer = document.createElement('div')
+tempContainer.className = "container"
+main.appendChild(tempContainer);
+
+let tempRow = document.createElement("div")
+tempRow.className = "row align-items-start"
+tempContainer.appendChild(tempRow);
+
 
 // gets data from API
 
 let tempValue = document.createElement('div')
+tempValue.className = "col"
 tempValue.textContent = mainData.temp
-main.appendChild(tempValue)
+// main.appendChild(tempValue)
 
-// convet k to c
+let fahrenheit = Math.ceil(mainData.temp * (9/5) - 459.67);
+let fahrenheitDiv = document.createElement('div')
+fahrenheitDiv.className = "col"
+fahrenheitDiv.textContent = `${fahrenheit} F`
 
-function kelvinToCelsius(celsius) {
-    return kelvin - 273.15;
+let celsius = Math.ceil(mainData.temp - 273.15);
+let celsiusDiv = document.createElement('div')
+celsiusDiv.className = "col"
+celsiusDiv.textContent = `${celsius} C`
 
 
-// convet k to F
-
-function kelvinToFahrenheit(fahrenheit)
-    return kelvin * (9/5) - 459.67;
+tempRow.appendChild(tempValue)
+tempRow.appendChild(fahrenheitDiv)
+tempRow.appendChild(celsiusDiv)
 
 
 // conditions section
