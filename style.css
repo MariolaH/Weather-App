@@ -3,6 +3,10 @@
     padding: 20px;
 }
 
-.main {
+/* body {
     background-color: aquamarine;
+} */
+ 
+image {
+    object-fit: cover;
 }

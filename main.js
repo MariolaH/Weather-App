@@ -185,3 +185,5 @@ function updateData() {
 function init(){
     frame.hidden = true;
 }
+
+document.body.style.backgroundImage = "url(IMG/clouds.jpeg)"
