@@ -1,11 +1,12 @@
 
+// elements
 let main = document.getElementById('main');
 let frame = document.createElement('div');
 frame.className = 'text-center'
 
 
 let header = document.createElement('weatherApp')
-header.setAttribute ('class', "header");
+header.setAttribute('class', "header");
 header.textContent = 'Weather App'
 main.appendChild(header);
 
@@ -14,6 +15,8 @@ main.appendChild(header);
 
 let topSection = document.createElement('div');
 main.appendChild(topSection);
+
+// create button
 
 let button = document.createElement('button')
 button.textContent = 'Get Weather'
@@ -24,7 +27,7 @@ button.addEventListener('click', () => {
 )
 topSection.appendChild(button);
 
-
+// input box for zip code
 
 let input = document.createElement('input')
 input.textContent = 'input'
@@ -88,7 +91,7 @@ frame.appendChild(tempContainer);
 
 
 
-// row and column for temp
+// Bootstrap row and column for temp
 
 let tempRow = document.createElement("div")
 tempRow.className = "row align-items-start"
@@ -127,13 +130,10 @@ let otherInfo = document.createElement('div')
 otherInfo.textContent = 'What does it look like outside...'
 frame.appendChild(otherInfo);
 
-// gets data from data object
+// icon
 
 let icon = document.createElement('img')
-
 frame.appendChild(icon);
-
-// 3. connect API
 
 // async - technique that enables your program to start a potentially long-running 
 // task and still be able to be responsive to other events while that task runs
@@ -146,7 +146,7 @@ async function getData() {
     // return the data
     return data;
 }
-// set the data into the object to go through mainData
+// setdata into the object to go through mainData
 async function setData() {
     //  try - try to do everything in function, fail will go to catch
     try {
@@ -158,7 +158,7 @@ async function setData() {
         mainData.city = data.name;
         mainData.temp = data.main.temp;
         mainData.otherInfo = data.weather[0].icon;
-        // updates the properties everytime the button gets clicked with the new zip code data
+        // updates the properties (in mainData) everytime the button gets clicked with the new zip code data
         updateData();
         // everytime we click button want to show data 
         frame.hidden = false;
@@ -167,7 +167,7 @@ async function setData() {
 
     }
 }
-// updates the ojected everytime set data gets ran
+// updates the oject everytime setData gets ran
 function updateData() {
     let fahrenheit = Math.ceil(mainData.temp * (9 / 5) - 459.67);
     let celsius = Math.ceil(mainData.temp - 273.15);
@@ -179,7 +179,7 @@ function updateData() {
     icon.src = `http://openweathermap.org/img/wn/${mainData.otherInfo}@2x.png`
 }
 
-// this is initlizing the body to not show the frame
+// this is initlizing the body to not show the frame (to not show the headers)
 function init() {
     frame.hidden = true;
 }
