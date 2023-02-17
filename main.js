@@ -54,12 +54,10 @@ function show() {
 
 
 // City section  
-// element.className = "div"
+
 let city = document.createElement('div')
 city.textContent = 'City'
 frame.appendChild(city)
-
-// gets data from API
 
 let cityValue = document.createElement('div')
 cityValue.textContent = mainData.city;
@@ -75,7 +73,7 @@ frame.appendChild(temperature);
 // container for temp
 
 let tempContainer = document.createElement('div')
-tempContainer.className = "container h3 text-center"
+tempContainer.className = "container  text-center"
 frame.appendChild(tempContainer);
 
 
@@ -86,26 +84,14 @@ let tempRow = document.createElement("div")
 tempRow.className = "row align-items-start"
 tempContainer.appendChild(tempRow);
 
-
-// gets data from API
-
 let tempValue = document.createElement('div')
 tempValue.className = "col"
-// tempValue.textContent = `${Kelvin} K`
-// main.appendChild(tempValue)
-
-//  convert to fahrenheit, put into column and add F
 
 let fahrenheitDiv = document.createElement('div')
 fahrenheitDiv.className = "col"
 
-// convert to fahrenheit, put into column and add F
-
-
 let celsiusDiv = document.createElement('div')
 celsiusDiv.className = "col"
-
-
 
 tempRow.appendChild(tempValue)
 tempRow.appendChild(fahrenheitDiv)
@@ -118,8 +104,6 @@ tempRow.appendChild(celsiusDiv)
 let condition = document.createElement('div')
 condition.textContent = "Condition"
 frame.appendChild(condition)
-
-// gets data from API
 
 let conditionWeather = document.createElement('div')
 conditionWeather.textContent = mainData.condition
@@ -186,8 +170,9 @@ function updateData() {
 }
 
 // this is initlizing the body to not show the frame
-function init(){
+function init() {
     frame.hidden = true;
 }
 
+// background Image
 document.body.style.backgroundImage = "url(IMG/clouds.jpeg)"
