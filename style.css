@@ -7,6 +7,22 @@
     background-color: aquamarine;
 } */
  
-image {
-    object-fit: cover;
+body {
+    /* object-fit: cover; */
+    background-repeat: no-repeat;
+  /* background-size: auto; */
+  background-size: cover;
+}
+
+/* .div {
+    text-align: center;
+} */
+
+#main > div > div:nth-child(even){
+    margin-bottom: 50px;
+
+}
+
+#main > div > div:nth-child(odd){
+font-size: 25px;
 }

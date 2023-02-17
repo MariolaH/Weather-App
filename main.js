@@ -1,6 +1,7 @@
 
 let main = document.getElementById('main');
 let frame = document.createElement('div');
+frame.className = 'text-center'
 
 // 1. create onclick and input 
 
@@ -41,6 +42,7 @@ let mainData = {
     temp: "",
     otherInfo: "",
 };
+// function to hide/show frame
 
 function hide() {
     frame.hidden = true;
@@ -52,7 +54,7 @@ function show() {
 
 
 // City section  
-
+// element.className = "div"
 let city = document.createElement('div')
 city.textContent = 'City'
 frame.appendChild(city)
@@ -63,6 +65,7 @@ let cityValue = document.createElement('div')
 cityValue.textContent = mainData.city;
 frame.appendChild(cityValue);
 
+
 // Temp section
 
 let temperature = document.createElement('div')
@@ -72,7 +75,7 @@ frame.appendChild(temperature);
 // container for temp
 
 let tempContainer = document.createElement('div')
-tempContainer.className = "container"
+tempContainer.className = "container h3 text-center"
 frame.appendChild(tempContainer);
 
 
@@ -133,12 +136,13 @@ frame.appendChild(otherInfo);
 // gets data from data object
 
 let icon = document.createElement('img')
-icon.src = `http://openweathermap.org/img/wn/10d@2x.png`
+
 frame.appendChild(icon);
 
 // 3. connect API
 
-// async - ???
+// async - technique that enables your program to start a potentially long-running 
+// task and still be able to be responsive to other events while that task runs
 
 async function getData() {
     // requesting info from api
@@ -155,7 +159,7 @@ async function setData() {
         // returns data from get data 
         data = await getData();
         console.log(data);
-        // setting objects properties with data value from the api
+        // setting object properties with data value from the api
         mainData.condition = data.weather[0].main;
         mainData.city = data.name;
         mainData.temp = data.main.temp;
@@ -178,7 +182,7 @@ function updateData() {
     fahrenheitDiv.textContent = `${fahrenheit} F`;
     celsiusDiv.textContent = `${celsius} C`;
     conditionWeather.textContent = mainData.condition;
-    icon.textContent = mainData.otherInfo;
+    icon.src = `http://openweathermap.org/img/wn/${mainData.otherInfo}@2x.png`
 }
 
 // this is initlizing the body to not show the frame
