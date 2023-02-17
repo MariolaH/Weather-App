@@ -175,4 +175,4 @@ function init() {
 }
 
 // background Image
-document.body.style.backgroundImage = "url(IMG/clouds.jpeg)"
+document.body.style.backgroundImage = "url(IMG/clouds10.jpeg)"
