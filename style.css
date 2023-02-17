@@ -22,5 +22,6 @@ body {
 #main>div>div:nth-child(odd) {
     font-size: 35px;
     font-family: monospace;
+    padding-top: 20px;
     
 }
