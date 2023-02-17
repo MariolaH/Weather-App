@@ -78,7 +78,7 @@ frame.appendChild(tempContainer);
 
 
 
-// row for temp
+// row and column for temp
 
 let tempRow = document.createElement("div")
 tempRow.className = "row align-items-start"

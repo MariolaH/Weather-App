@@ -14,16 +14,18 @@ body {
 
 #main>div>div:nth-child(even) {
     margin-bottom: 50px;
-    font-size: larger;
-    color: rgb(2, 2, 44);
+    font-size: 20px;
+    /* color: rgb(2, 2, 44); */
+    color: #051c31;
 
 }
 
 #main>div>div:nth-child(odd) {
-    font-size: 35px;
+    font-size: 30px;
     font-family: monospace;
     padding-top: 20px;
-    
+    color: black;
+
 }
 
 button {
@@ -32,5 +34,11 @@ button {
     padding: 10px 10px;
     margin: 15px;
     color: aliceblue;
-    border: 2px solid #2064a4; /* Green */
+    border: 2px solid #2064a4;
+    font-family: monospace;
+}
+
+input {
+    font-size: 20px;
+    font-family: monospace;
 }
