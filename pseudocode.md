@@ -24,6 +24,7 @@ Functions:
     when new zip code is put in and button is clicked renders new weather info for new zip code
     refresh button - resets weather info in app????
     or just use same button
+    click input box clear screen
 
     when zip doesn't exist... error message or alert pop up
 

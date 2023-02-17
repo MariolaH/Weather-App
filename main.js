@@ -114,7 +114,7 @@ frame.appendChild(conditionWeather);
 // Other info section
 
 let otherInfo = document.createElement('div')
-otherInfo.textContent = 'Other Info'
+otherInfo.textContent = 'What does it look like outside...'
 frame.appendChild(otherInfo);
 
 // gets data from data object
