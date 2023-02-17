@@ -3,10 +3,6 @@
     padding: 20px;
 }
 
-/* body {
-    background-color: aquamarine;
-} */
-
 body {
     background-repeat: no-repeat;
     background-size: cover;
@@ -41,4 +37,11 @@ button {
 input {
     font-size: 20px;
     font-family: monospace;
+}
+
+.header {
+    font-size: 45px;
+    font-family: monospace;
+    color: black;
+    padding-top: 10px;
 }

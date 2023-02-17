@@ -3,7 +3,17 @@ let main = document.getElementById('main');
 let frame = document.createElement('div');
 frame.className = 'text-center'
 
-// 1. create onclick and input 
+
+let header = document.createElement('weatherApp')
+header.setAttribute ('class', "header");
+header.textContent = 'Weather App'
+main.appendChild(header);
+
+
+// input.textContent = 'input'
+
+let topSection = document.createElement('div');
+main.appendChild(topSection);
 
 let button = document.createElement('button')
 button.textContent = 'Get Weather'
@@ -12,13 +22,13 @@ button.addEventListener('click', () => {
     setData();
 }
 )
-main.appendChild(button);
+topSection.appendChild(button);
 
 
 
 let input = document.createElement('input')
 input.textContent = 'input'
-main.appendChild(input);
+topSection.appendChild(input);
 main.appendChild(frame);
 
 
